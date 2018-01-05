@@ -11,5 +11,6 @@ services:
     environment:
       - USER_NAME=demouser
       - PASSWORD=demopwd
+      - OUTSIDE_URL=http://10.66.66.66:3141
     volumes:
       - ./data:/var/lib/devpi
