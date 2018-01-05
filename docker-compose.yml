@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  devpi-server:
+    image: wushaobo/devpi-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3141:80"
+    environment:
+      - USER_NAME=demouser
+      - PASSWORD=demopwd
+    volumes:
+      - ./data:/var/lib/devpi
