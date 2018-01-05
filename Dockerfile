@@ -1,6 +1,5 @@
 FROM python:3.6
 
-COPY cn.list /etc/apt/sources.list
 RUN apt-get update && \
     apt-get install -y locales-all apache2-utils nginx && \
     apt-get clean
@@ -9,7 +8,7 @@ ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
-RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple \
+RUN pip install \
 	devpi-server==4.3.2 \
 	devpi-client==3.1.0 \
 	devpi-web==3.2.1
